@@ -25,15 +25,34 @@ railButtons.forEach(btn => {
   });
 });
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      railButtons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+function updateActiveRail() {
+  const scrollPos = window.scrollY + window.innerHeight * 0.42;
+  let currentId = 'hero';
+
+  for (let i = 0; i < sections.length; i++) {
+    const s = sections[i];
+    if (!s) continue;
+    const top = s.offsetTop;
+    const height = s.offsetHeight;
+    if (scrollPos >= top && scrollPos < top + height) {
+      currentId = s.id;
+      break;
+    } else if (scrollPos >= top) {
+      currentId = s.id;
     }
-  });
-}, { threshold: 0.5 });
-sections.forEach(s => s && sectionObserver.observe(s));
+  }
+
+  // If reached near bottom of page, activate last section (contact)
+  if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 60) {
+    currentId = 'contact';
+  }
+
+  railButtons.forEach(b => b.classList.toggle('active', b.dataset.target === currentId));
+}
+
+window.addEventListener('scroll', updateActiveRail, { passive: true });
+window.addEventListener('resize', updateActiveRail, { passive: true });
+updateActiveRail();
 
 // ============================================
 // Lightbox — cards open a focused view of the

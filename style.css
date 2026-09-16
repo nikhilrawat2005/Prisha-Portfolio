@@ -152,7 +152,85 @@ img{ display:block; max-width:100%; }
   padding-top:1vh;
 }
 
-.hero__content{ position:relative; z-index:1; }
+.hero__content{ position:relative; z-index:2; }
+
+/* ============================================
+   HERO SUNFLOWER ART & LIGHT SPARKLES
+   ============================================ */
+.hero__visual{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:2.5rem auto 1.5rem;
+  width:min(70vw, 290px);
+  aspect-ratio:1/1;
+  pointer-events:none;
+}
+
+.hero__flower-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 14px 28px rgba(62, 39, 35, 0.16));
+  animation:flowerPlayfulSpin 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin:center center;
+  will-change:transform;
+}
+
+/* Playful cartoonish rhythmic rotate + gentle bounce */
+@keyframes flowerPlayfulSpin{
+  0%{
+    transform:rotate(0deg) scale(1);
+  }
+  25%{
+    transform:rotate(90deg) scale(1.04);
+  }
+  50%{
+    transform:rotate(180deg) scale(0.98);
+  }
+  75%{
+    transform:rotate(270deg) scale(1.03);
+  }
+  100%{
+    transform:rotate(360deg) scale(1);
+  }
+}
+
+/* Very subtle, light sparkling ambient stars */
+.hero__sparkles{
+  position:absolute;
+  inset:-24px;
+  pointer-events:none;
+}
+
+.sparkle{
+  position:absolute;
+  color:var(--gold);
+  font-size:1.15rem;
+  opacity:0;
+  line-height:1;
+  user-select:none;
+  animation:sparkleTwinkle 4s ease-in-out infinite;
+}
+
+.sparkle--1{ top:8%; left:12%; font-size:1.25rem; animation-delay:0s; }
+.sparkle--2{ top:14%; right:14%; font-size:0.95rem; animation-delay:1.1s; }
+.sparkle--3{ bottom:18%; left:6%; font-size:0.85rem; animation-delay:2.3s; }
+.sparkle--4{ bottom:12%; right:10%; font-size:1.15rem; animation-delay:1.7s; }
+.sparkle--5{ top:46%; right:-5%; font-size:0.9rem; animation-delay:3.1s; }
+
+@keyframes sparkleTwinkle{
+  0%, 100%{
+    opacity:0;
+    transform:scale(0.3) rotate(0deg);
+  }
+  50%{
+    opacity:0.75;
+    transform:scale(1.2) rotate(45deg);
+  }
+}
 
 .hero__kicker{
   font-family:var(--sans);
@@ -716,15 +794,18 @@ img{ display:block; max-width:100%; }
     justify-content:space-between;
     padding:0 var(--edge);
   }
-  .hero__mark{
-    position:absolute; top:5vh; left:var(--edge);
-  }
   .hero__blob{
-    top:auto; right:2vw; bottom:-10vh;
+    top:auto; right:6vw; bottom:-12vh;
     width:42vw; height:42vw;
   }
   .hero__content{
-    max-width:640px;
+    max-width:580px;
+    flex:1;
+  }
+  .hero__visual{
+    margin:0 4vw 0 auto;
+    width:clamp(280px, 26vw, 420px);
+    z-index:2;
   }
   .hero__scroll{ left:auto; right:var(--edge); }
 
