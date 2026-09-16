@@ -164,16 +164,44 @@ img{ display:block; max-width:100%; }
   align-items:center;
   justify-content:center;
   margin:2.5rem auto 1.5rem;
-  width:min(70vw, 290px);
+  width:min(85vw, 360px);
   aspect-ratio:1/1;
   pointer-events:none;
 }
 
+/* Pink shade glow positioned exactly behind the sunflower center */
+.hero__blob{
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  width:125%; height:125%;
+  border-radius:50%;
+  background:radial-gradient(circle at center, rgba(244, 201, 214, 0.95) 0%, rgba(244, 201, 214, 0.6) 38%, rgba(244, 201, 214, 0.18) 60%, transparent 74%);
+  filter:blur(38px);
+  z-index:0;
+  pointer-events:none;
+  animation:blobPulse 8s ease-in-out infinite alternate;
+  will-change:transform, opacity;
+}
+
+@keyframes blobPulse{
+  0%{
+    transform:translate(-50%, -50%) scale(0.96);
+    opacity:0.85;
+  }
+  100%{
+    transform:translate(-50%, -50%) scale(1.08);
+    opacity:1;
+  }
+}
+
 .hero__flower-img{
+  position:relative;
+  z-index:1;
   width:100%;
   height:100%;
   object-fit:contain;
-  filter:drop-shadow(0 14px 28px rgba(62, 39, 35, 0.16));
+  filter:drop-shadow(0 16px 32px rgba(62, 39, 35, 0.18));
   animation:flowerPlayfulSpin 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   transform-origin:center center;
   will-change:transform;
@@ -201,25 +229,26 @@ img{ display:block; max-width:100%; }
 /* Very subtle, light sparkling ambient stars */
 .hero__sparkles{
   position:absolute;
-  inset:-24px;
+  inset:-28px;
+  z-index:2;
   pointer-events:none;
 }
 
 .sparkle{
   position:absolute;
   color:var(--gold);
-  font-size:1.15rem;
+  font-size:1.25rem;
   opacity:0;
   line-height:1;
   user-select:none;
   animation:sparkleTwinkle 4s ease-in-out infinite;
 }
 
-.sparkle--1{ top:8%; left:12%; font-size:1.25rem; animation-delay:0s; }
-.sparkle--2{ top:14%; right:14%; font-size:0.95rem; animation-delay:1.1s; }
-.sparkle--3{ bottom:18%; left:6%; font-size:0.85rem; animation-delay:2.3s; }
-.sparkle--4{ bottom:12%; right:10%; font-size:1.15rem; animation-delay:1.7s; }
-.sparkle--5{ top:46%; right:-5%; font-size:0.9rem; animation-delay:3.1s; }
+.sparkle--1{ top:4%; left:8%; font-size:1.35rem; animation-delay:0s; }
+.sparkle--2{ top:10%; right:10%; font-size:1.05rem; animation-delay:1.1s; }
+.sparkle--3{ bottom:14%; left:4%; font-size:0.95rem; animation-delay:2.3s; }
+.sparkle--4{ bottom:8%; right:6%; font-size:1.25rem; animation-delay:1.7s; }
+.sparkle--5{ top:48%; right:-8%; font-size:1rem; animation-delay:3.1s; }
 
 @keyframes sparkleTwinkle{
   0%, 100%{
@@ -227,7 +256,7 @@ img{ display:block; max-width:100%; }
     transform:scale(0.3) rotate(0deg);
   }
   50%{
-    opacity:0.75;
+    opacity:0.85;
     transform:scale(1.2) rotate(45deg);
   }
 }
@@ -794,17 +823,13 @@ img{ display:block; max-width:100%; }
     justify-content:space-between;
     padding:0 var(--edge);
   }
-  .hero__blob{
-    top:auto; right:6vw; bottom:-12vh;
-    width:42vw; height:42vw;
-  }
   .hero__content{
-    max-width:580px;
+    max-width:560px;
     flex:1;
   }
   .hero__visual{
-    margin:0 4vw 0 auto;
-    width:clamp(280px, 26vw, 420px);
+    margin:0 5vw 0 auto;
+    width:clamp(360px, 32vw, 480px);
     z-index:2;
   }
   .hero__scroll{ left:auto; right:var(--edge); }
