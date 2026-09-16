@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Pratyaksha — UI/UX design student at Amity School of Design. Portfolio of UI/UX work, motion graphics and graphic design.">
+<meta name="theme-color" content="#FBF4ED">
+<title>Pratyaksha — UI/UX Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav class="rail" aria-label="Section navigation">
+  <button data-target="hero" class="active" aria-label="Hero"></button>
+  <button data-target="about" aria-label="About"></button>
+  <button data-target="work" aria-label="Work"></button>
+  <button data-target="skills" aria-label="Skills"></button>
+  <button data-target="contact" aria-label="Contact"></button>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero__blob" aria-hidden="true"></div>
+  <span class="hero__mark">portfolio — 2026</span>
+
+  <div class="hero__content">
+    <p class="hero__kicker" data-reveal>UI/UX Design Student</p>
+    <h1 class="hero__name" data-reveal>Pratyaksha</h1>
+    <hr class="hero__rule" data-reveal>
+    <p class="hero__role" data-reveal>Bachelor of Design, Amity School of Design — shaping ideas into interfaces people enjoy using.</p>
+  </div>
+
+  <div class="hero__scroll">
+    <span class="line"></span>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="about__col">
+    <p class="about__label" data-reveal>About</p>
+    <h2 class="about__statement" data-reveal>I design things <em>worth</em> spending time with.</h2>
+  </div>
+
+  <div class="about__col">
+    <p class="about__body" data-reveal>Currently a design student figuring out how interfaces, motion and typography can sit together without shouting. Equal parts UI systems and old-school poster making — I like when both show up in the same project.</p>
+
+    <div class="about__meta" data-reveal>
+      <div><span>Studying</span> — Bachelor of Design, Amity School of Design</div>
+      <div><span>Focus</span> — UI/UX Design</div>
+      <div><span>Based in</span> — Noida, India</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="work" id="work">
+  <div class="work__header">
+    <div>
+      <p class="work__label" data-reveal>Work</p>
+      <h2 class="work__statement" data-reveal>A few things I've made.</h2>
+    </div>
+  </div>
+
+  <div class="work__grid">
+
+    <button class="card" data-reveal
+      data-type="video" data-src="assets/video-areyouready.mp4" data-poster="assets/thumb-areyouready.png"
+      data-title="Are You रेडी?" data-tag="Motion Graphics · Reel"
+      data-desc="A retro radio-station inspired reveal made for @asd_afterhours — playful sting, warm vintage palette, quick question-mark transition.">
+      <div class="card__media">
+        <img src="assets/thumb-areyouready.png" alt="Are You Ready reel thumbnail" loading="lazy">
+        <span class="card__play" aria-label="Play video" aria-hidden="true"></span>
+      </div>
+      <div class="card__info">
+        <span class="card__title">Are You रेडी?</span>
+        <span class="card__tag">Motion Graphics</span>
+      </div>
+    </button>
+
+    <button class="card card--poster" data-reveal
+      data-type="image" data-src="assets/poster-asd.png"
+      data-title="ASD Event Poster" data-tag="Graphic Design"
+      data-desc="Collage-style poster for Amity School of Design's event — classical bust, neon accents and layered print textures built for Instagram-first distribution.">
+      <div class="card__media">
+        <img src="assets/poster-asd.png" alt="Amity School of Design poster" loading="lazy">
+      </div>
+      <div class="card__info">
+        <span class="card__title">ASD Poster</span>
+        <span class="card__tag">Graphic Design</span>
+      </div>
+    </button>
+
+    <button class="card" data-reveal
+      data-type="video" data-src="assets/video-curtain.mp4" data-poster="assets/thumb-curtain.png"
+      data-title="Curtain Reveal" data-tag="Motion Graphics · Reel"
+      data-desc="A cinematic stage-curtain opener for @asd_afterhours — spotlight, depth and a single reveal moment carrying the whole animation.">
+      <div class="card__media">
+        <img src="assets/thumb-curtain.png" alt="Curtain reveal thumbnail" loading="lazy">
+        <span class="card__play" aria-label="Play video" aria-hidden="true"></span>
+      </div>
+      <div class="card__info">
+        <span class="card__title">Curtain Reveal</span>
+        <span class="card__tag">Motion Graphics</span>
+      </div>
+    </button>
+
+    <button class="card" data-reveal
+      data-type="pair" data-src="assets/cyclemart-1.png" data-src2="assets/cyclemart-2.png"
+      data-title="Guptaji Cycle Mart" data-tag="Client Work · UI"
+      data-desc="A scannable review card designed for a local business's two branches — same system, two locations, built to feel like a small trustworthy piece of UI rather than a flyer.">
+      <div class="card__media is-pair">
+        <img src="assets/cyclemart-1.png" alt="Guptaji Cycle Mart review card, Vaishali branch" loading="lazy">
+        <img src="assets/cyclemart-2.png" alt="Guptaji Cycle Mart review card, Sector 93 branch" loading="lazy">
+      </div>
+      <div class="card__info">
+        <span class="card__title">Guptaji Cycle Mart</span>
+        <span class="card__tag">Client Work</span>
+      </div>
+    </button>
+
+  </div>
+</section>
+
+<!-- ================= SKILLS + EDUCATION ================= -->
+<section class="skills" id="skills">
+  <div class="skills__col">
+    <p class="skills__label" data-reveal>Toolkit</p>
+    <h2 class="skills__statement" data-reveal>What I reach for.</h2>
+
+    <ul class="chips" data-reveal>
+      <li class="chip">UI Design</li>
+      <li class="chip">UX Research</li>
+      <li class="chip">Figma</li>
+      <li class="chip">Motion Graphics</li>
+      <li class="chip">Typography</li>
+      <li class="chip">Branding</li>
+      <li class="chip">Illustrator</li>
+      <li class="chip">Photoshop</li>
+    </ul>
+  </div>
+
+  <div class="skills__col">
+    <p class="skills__label" data-reveal>Education</p>
+
+    <div class="credential" data-reveal>
+      <div class="credential__top">
+        <span class="credential__stamp">BDes</span>
+        <span class="credential__year">2023 — 2027</span>
+      </div>
+      <p class="credential__school">Amity School of Design</p>
+      <p class="credential__course">Bachelor of Design — UI/UX Specialization</p>
+      <div class="credential__rule"></div>
+      <p class="credential__note">Coursework in interface systems, motion, user research and visual communication.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <p class="contact__label" data-reveal>Get in touch</p>
+    <h2 class="contact__statement" data-reveal>Got a project or just want to talk design?</h2>
+    <p class="contact__sub" data-reveal>I reply fastest on WhatsApp — but pick whichever feels right.</p>
+
+    <div class="contact__buttons" data-reveal>
+      <a class="btn" href="https://wa.me/919205766593" target="_blank" rel="noopener">
+        <span class="btn__icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.6 6.4A8 8 0 0 0 4.4 16.2L3 21l4.9-1.3A8 8 0 1 0 17.6 6.4Z" stroke="currentColor" stroke-width="1.5"/><path d="M8.6 8.9c.2-.5.4-.5.6-.5h.5c.15 0 .35 0 .5.4.2.5.6 1.5.65 1.6.05.1.1.25 0 .4-.1.15-.15.25-.3.4-.15.15-.3.3-.15.55.15.25.65 1.05 1.4 1.7.95.85 1.7 1.1 1.95 1.25.25.1.4.1.55-.05.15-.2.6-.7.75-.95.15-.25.3-.2.5-.1.2.05 1.25.6 1.45.7.2.1.35.15.4.25.05.15.05.75-.2 1.4-.25.65-1.4 1.2-1.95 1.25-.5.05-1.1.1-3.55-.9-2.95-1.2-4.85-4.15-5-4.35-.15-.2-1.15-1.55-1.15-2.9 0-1.35.7-2 .95-2.25Z" fill="currentColor"/></svg>
+        </span>
+        <span>WhatsApp</span>
+      </a>
+
+      <a class="btn" href="https://www.linkedin.com/in/pratyaksha-5a8a50424/" target="_blank" rel="noopener">
+        <span class="btn__icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M7.5 10.5v6M7.5 7.75v.01M12 16.5v-3.75c0-1.24 1-2.25 2.25-2.25S16.5 11.5 16.5 12.75V16.5M12 10.5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <span>LinkedIn</span>
+      </a>
+
+      <a class="btn" href="mailto:pratyakshag27@gmail.com">
+        <span class="btn__icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>Email</span>
+      </a>
+    </div>
+
+    <div class="contact__foot" data-reveal>
+      <span>Pratyaksha, 2026</span>
+      <span>UI/UX Design Student · Amity School of Design</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox__panel">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__media" id="lightboxMedia"></div>
+    <div class="lightbox__info">
+      <p class="lightbox__title" id="lightboxTitle"></p>
+      <p class="lightbox__desc" id="lightboxDesc"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
