@@ -455,7 +455,8 @@ img{ display:block; max-width:100%; }
 
 .card__media{
   position:relative;
-  aspect-ratio:9/14;
+  aspect-ratio:3/4;
+  max-height:240px;
   overflow:hidden;
   background:#2e1c18;
   display:flex;
@@ -502,26 +503,26 @@ img{ display:block; max-width:100%; }
 }
 
 .card__info{
-  padding:1.1rem 1.3rem 1.3rem;
+  padding:0.75rem 0.9rem 0.9rem;
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
-  gap:1rem;
+  align-items:baseline;
+  gap:0.5rem;
 }
 .card__title{
   font-family:var(--display);
   font-style:italic;
   font-weight:500;
-  font-size:1.35rem;
+  font-size:1.1rem;
   color:var(--espresso);
 }
 .card__tag{
   font-family:var(--sans);
   font-weight:600;
-  font-size:0.78rem;
+  font-size:0.72rem;
   color:var(--espresso-soft);
   white-space:nowrap;
-  padding-top:0.3rem;
+  padding-top:0.2rem;
 }
 
 /* ============================================
@@ -845,21 +846,22 @@ img{ display:block; max-width:100%; }
   .about__body, .about__meta{ margin-top:0; }
   .about__col{ display:flex; flex-direction:column; gap:2.4rem; padding-top:0.4rem; }
 
-  /* --- Work: balanced modern 3-column top row, full-width feature bottom row --- */
-  .work{ padding:16vh var(--edge) 14vh; }
-  .work__header{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:6vh; }
+  /* --- Work: 4 cards in one row on desktop, full-width feature banner below --- */
+  .work{ padding:8vh var(--edge) 8vh; max-width:1440px; margin:0 auto; }
+  .work__header{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3vh; }
   .work__statement{ margin-bottom:0; }
 
   .work__grid{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:28px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
   }
   .work__grid .card:last-child{
     grid-column:1 / -1;
   }
   .work__grid .card:last-child .card__media{
-    aspect-ratio:21/9;
+    aspect-ratio:24/7;
+    max-height:200px;
   }
 
   /* --- Skills + Education: side by side, credential card doesn't
