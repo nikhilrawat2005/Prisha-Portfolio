@@ -852,23 +852,13 @@ img{ display:block; max-width:100%; }
 
   .work__grid{
     display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    grid-template-areas:
-      "a b c"
-      "d d d";
+    grid-template-columns:repeat(2, 1fr);
     gap:28px;
   }
-  .work__grid .card:nth-child(1){ grid-area:a; }
-  .work__grid .card:nth-child(2){ grid-area:b; }
-  .work__grid .card:nth-child(3){ grid-area:c; }
-  .work__grid .card:nth-child(4){ grid-area:d; }
-
-  .work__grid .card:nth-child(1) .card__media,
-  .work__grid .card:nth-child(2) .card__media,
-  .work__grid .card:nth-child(3) .card__media{
-    aspect-ratio:9/14;
+  .work__grid .card:last-child{
+    grid-column:1 / -1;
   }
-  .work__grid .card:nth-child(4) .card__media{
+  .work__grid .card:last-child .card__media{
     aspect-ratio:21/9;
   }
 
